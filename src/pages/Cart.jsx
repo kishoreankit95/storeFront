@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import ItemDesc from '../components/ItemDesc';
 
 const Cart = () => {
+
+  const [name, setName] = useState("");
 
     const navigate = useNavigate();
 
@@ -10,7 +13,45 @@ const Cart = () => {
     }
 
   return (
-    <div>Cart</div>
+    <div>
+      <div>
+        <div>
+          <label for="name">Name</label>
+          <input id="name" type='text' />
+        </div>
+        <div>
+          <label for="address">Address</label>
+          <input id="address" type='text' />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type='text' />
+        </div>
+        <div>
+          <label for="number">Phone Number</label>
+          <input id="number" type='number' />
+        </div>
+        <div>
+          <label for="ccNumber">Credit Card Number</label>
+          <input id="ccNumber" type='number' />
+        </div>
+      </div>
+      <div>
+        <p>Item details:</p>
+        {/* <div>
+          <p>Product Name: <span></span></p>
+          <p>Short Description: <span></span></p>
+          <p>Price: <span></span></p>
+          <p>Discount: <span></span></p>
+          <p>Actual Price: <span></span></p>
+        </div> */}
+        <ItemDesc />
+      </div>
+        <div>
+          <p>Proceed to Order Items:</p>
+          <button onClick={orderConfirm}>Order Now</button>
+        </div>
+    </div>
   )
 }
 
