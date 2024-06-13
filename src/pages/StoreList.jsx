@@ -1,24 +1,28 @@
 import React from 'react';
 import AggridComp from '../components/AggridComp';
 import * as gridData from "../data/data.json";
+import {useNavigate} from "react-router-dom";
 
-const StoreList = () => {
+const StoreList = ({stateChanger}) => {
+
+    const navigate = useNavigate();
 
     const storeListData = gridData.default.storeItems;
 
-    const buyClickHandler = () => {
-        
+    const buyClickHandler = (item) => {
+        stateChanger({type: "productSelect", value: item})
+        navigate("/cart");
     }
 
     const agGroupCellRenderer = (params) => {
         return (
-            <button onClick={buyClickHandler}>Buy</button>
+            <button onClick={() => buyClickHandler(params.data)}>Buy</button>
         )
     }
 
     const colData= [
         { field: "picture", headerName: "Picture" },
-        { field: "name", headerName: "Picture"  },
+        { field: "name", headerName: "Name"  },
         { field: "shortDesc", headerName: "Short Description"  },
         { field: "price", headerName: "Suggested Price"  },
         { field: "actualPrice", headerName: "Actual Price"  },

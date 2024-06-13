@@ -17,20 +17,26 @@ function App() {
     cNumber: null,
     ccNumber: null
   };
+  
 
   const reducer = (state, action) => {
     switch(action.type){
-
+      case "productSelect":
+        return {...state, selItem: action.value}
     }
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  console.log(state);
+
+
+
   return (
     <div className="App py-50">
       <Container >
       <Routes>
-        <Route path="/" element={<StoreList />} />
+        <Route path="/" element={<StoreList stateChanger={dispatch} />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/orders" element={<Orders />} />
       </Routes>
