@@ -14,6 +14,7 @@ function App() {
 
   const initialState = {
     selItem: null,
+    actPrice: null,
     cName: null,
     cAddress: null,
     cEmail: null,
@@ -29,10 +30,11 @@ function App() {
 
   return (
     <div className="App py-50">
+      <h2 className='my-50 '>Storefront Application</h2>
       <Container >
-      <ContextDispatch.Provider value={state}>
+      <ContextDispatch.Provider value={{state: state, stateChanger: dispatch}}>
         <Routes>
-          <Route path="/" element={<StoreList stateChanger={dispatch} />} />
+          <Route path="/" element={<StoreList />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/orders" element={<Orders />} />
         </Routes>

@@ -8,7 +8,7 @@ const ItemDesc = ({itemData}) => {
         <p>Short Description: <span>{itemData?.selItem?.shortDesc}</span></p>
         <p>Price: <span>{itemData?.selItem?.price}</span></p>
         <p>Discount: <span>{itemData?.selItem?.discount}</span></p>
-        <p>Actual Price: <span>{itemData?.selItem?.actualPrice}</span></p>
+        <p>Actual Price: <span>{itemData?.actPrice}</span></p>
     </div>
   )
 }

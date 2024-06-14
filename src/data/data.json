@@ -1,31 +1,184 @@
 {
     "storeItems": [
         {
-            "id": 168,
+            "id": 1,
             "name": "Charger SXT RWD",
             "shortDesc": "Charger SXT RWD desc",
-            "price": 32999.99,
+            "price": 15000,
             "actualPrice": 32000,
-            "discount": 13,
+            "discount": 10,
             "picture": "https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/thumbnail.png"
         },
         {
-            "id": 168,
-            "name": "Charger SXT RWD",
-            "shortDesc": "Charger SXT RWD desc",
-            "price": 2999.99,
+            "id": 2,
+            "name": "Dell 25' Monitor",
+            "shortDesc": "Dell 25' Monitor desc",
+            "price": 40000,
             "actualPrice": 32000,
-            "discount": 13,
+            "discount": 20,
             "picture": "https://cdn.dummyjson.com/products/images/womens-jewellery/Green%20Oval%20Earring/thumbnail.png"
         },
         {
-            "id": 168,
+            "id": 3,
             "name": "Apple MacBook Pro 14 Inch Space Grey",
             "shortDesc": "Apple MacBook Pro 14 Inch Space Grey desc",
             "price": 3999.99,
             "actualPrice": 32000,
             "discount": 13,
             "picture": "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png"
-        }        
+        },
+        {
+            "id": 4,
+            "name": "Charger SXT RWD",
+            "shortDesc": "Charger SXT RWD desc",
+            "price": 15000,
+            "actualPrice": 32000,
+            "discount": 10,
+            "picture": "https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/thumbnail.png"
+        },
+        {
+            "id": 5,
+            "name": "Dell 25' Monitor",
+            "shortDesc": "Dell 25' Monitor desc",
+            "price": 40000,
+            "actualPrice": 32000,
+            "discount": 20,
+            "picture": "https://cdn.dummyjson.com/products/images/womens-jewellery/Green%20Oval%20Earring/thumbnail.png"
+        },
+        {
+            "id": 6,
+            "name": "Apple MacBook Pro 14 Inch Space Grey",
+            "shortDesc": "Apple MacBook Pro 14 Inch Space Grey desc",
+            "price": 3999.99,
+            "actualPrice": 32000,
+            "discount": 13,
+            "picture": "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png"
+        },
+        {
+            "id": 7,
+            "name": "Charger SXT RWD",
+            "shortDesc": "Charger SXT RWD desc",
+            "price": 15000,
+            "actualPrice": 32000,
+            "discount": 10,
+            "picture": "https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/thumbnail.png"
+        },
+        {
+            "id": 8,
+            "name": "Dell 25' Monitor",
+            "shortDesc": "Dell 25' Monitor desc",
+            "price": 40000,
+            "actualPrice": 32000,
+            "discount": 20,
+            "picture": "https://cdn.dummyjson.com/products/images/womens-jewellery/Green%20Oval%20Earring/thumbnail.png"
+        },
+        {
+            "id": 9,
+            "name": "Apple MacBook Pro 14 Inch Space Grey",
+            "shortDesc": "Apple MacBook Pro 14 Inch Space Grey desc",
+            "price": 3999.99,
+            "actualPrice": 32000,
+            "discount": 13,
+            "picture": "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png"
+        },
+        {
+            "id": 10,
+            "name": "Charger SXT RWD",
+            "shortDesc": "Charger SXT RWD desc",
+            "price": 15000,
+            "actualPrice": 32000,
+            "discount": 10,
+            "picture": "https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/thumbnail.png"
+        },
+        {
+            "id": 11,
+            "name": "Dell 25' Monitor",
+            "shortDesc": "Dell 25' Monitor desc",
+            "price": 40000,
+            "actualPrice": 32000,
+            "discount": 20,
+            "picture": "https://cdn.dummyjson.com/products/images/womens-jewellery/Green%20Oval%20Earring/thumbnail.png"
+        },
+        {
+            "id": 12,
+            "name": "Apple MacBook Pro 14 Inch Space Grey",
+            "shortDesc": "Apple MacBook Pro 14 Inch Space Grey desc",
+            "price": 3999.99,
+            "actualPrice": 32000,
+            "discount": 13,
+            "picture": "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png"
+        },
+        {
+            "id": 13,
+            "name": "Charger SXT RWD",
+            "shortDesc": "Charger SXT RWD desc",
+            "price": 15000,
+            "actualPrice": 32000,
+            "discount": 10,
+            "picture": "https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/thumbnail.png"
+        },
+        {
+            "id": 14,
+            "name": "Dell 25' Monitor",
+            "shortDesc": "Dell 25' Monitor desc",
+            "price": 40000,
+            "actualPrice": 32000,
+            "discount": 20,
+            "picture": "https://cdn.dummyjson.com/products/images/womens-jewellery/Green%20Oval%20Earring/thumbnail.png"
+        },
+        {
+            "id": 15,
+            "name": "Apple MacBook Pro 14 Inch Space Grey",
+            "shortDesc": "Apple MacBook Pro 14 Inch Space Grey desc",
+            "price": 3999.99,
+            "actualPrice": 32000,
+            "discount": 13,
+            "picture": "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png"
+        },
+        {
+            "id": 16,
+            "name": "Charger SXT RWD",
+            "shortDesc": "Charger SXT RWD desc",
+            "price": 15000,
+            "actualPrice": 32000,
+            "discount": 10,
+            "picture": "https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/thumbnail.png"
+        },
+        {
+            "id": 17,
+            "name": "Dell 25' Monitor",
+            "shortDesc": "Dell 25' Monitor desc",
+            "price": 40000,
+            "actualPrice": 32000,
+            "discount": 20,
+            "picture": "https://cdn.dummyjson.com/products/images/womens-jewellery/Green%20Oval%20Earring/thumbnail.png"
+        },
+        {
+            "id": 18,
+            "name": "Apple MacBook Pro 14 Inch Space Grey",
+            "shortDesc": "Apple MacBook Pro 14 Inch Space Grey desc",
+            "price": 3999.99,
+            "actualPrice": 32000,
+            "discount": 13,
+            "picture": "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png"
+        },
+        {
+            "id": 19,
+            "name": "Charger SXT RWD",
+            "shortDesc": "Charger SXT RWD desc",
+            "price": 15000,
+            "actualPrice": 32000,
+            "discount": 10,
+            "picture": "https://cdn.dummyjson.com/products/images/vehicle/Charger%20SXT%20RWD/thumbnail.png"
+        },
+        {
+            "id": 20,
+            "name": "Dell 25' Monitor",
+            "shortDesc": "Dell 25' Monitor desc",
+            "price": 40000,
+            "actualPrice": 32000,
+            "discount": 20,
+            "picture": "https://cdn.dummyjson.com/products/images/womens-jewellery/Green%20Oval%20Earring/thumbnail.png"
+        }
     ]
 }

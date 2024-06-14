@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import AggridComp from '../components/AggridComp';
 import * as gridData from "../data/data.json";
 import {useNavigate} from "react-router-dom";
+import { ContextDispatch } from '../App';
 
 const StoreList = ({stateChanger}) => {
 
@@ -9,25 +10,39 @@ const StoreList = ({stateChanger}) => {
 
     const storeListData = gridData.default.storeItems;
 
+    const stateImport = useContext(ContextDispatch);
+
     const buyClickHandler = (item) => {
-        stateChanger({type: "productSelect", value: item})
+        stateChanger({type: "productSelect", value: item.data})
         navigate("/cart");
     }
 
-    const agGroupCellRenderer = (params) => {
+    const buyBtnRenderer = (params) => {
         return (
-            <button className='btn-1' onClick={() => buyClickHandler(params.data)}>Buy</button>
+            <button className='btn-1' onClick={() => buyClickHandler(params)}>Buy</button>
+        )
+    };
+
+    const picColRenderer = (params) => {
+        return (
+            <img style={{height: "100%"}} src={params.data.picture} />
         )
     }
 
+    const actualPriceRenderer = (params) => {
+        let actualPrice = Math.floor(params.data.price - (params.data.price*params.data.discount/100));
+        
+        return actualPrice;
+    }
+
     const colData= [
-        { field: "picture", headerName: "Picture" },
+        { field: "picture", headerName: "Picture", cellRenderer: picColRenderer },
         { field: "name", headerName: "Name"  },
         { field: "shortDesc", headerName: "Short Description"  },
         { field: "price", headerName: "Suggested Price"  },
-        { field: "actualPrice", headerName: "Actual Price"  },
         { field: "discount", headerName: "% Discount"  },
-        { field: "buy", headerName: "Buy", cellRenderer: agGroupCellRenderer  },
+        { field: "actualPrice", headerName: "Actual Price", cellRenderer: actualPriceRenderer   },
+        { field: "buy", headerName: "Buy", cellRenderer: buyBtnRenderer  },
     ];
 
     const rowData = [
