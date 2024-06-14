@@ -1,11 +1,11 @@
-import React, {useState, useContext, useRef} from 'react';
+import React, {useState, useContext, useRef, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import ItemDesc from '../components/ItemDesc';
 import { ContextDispatch } from '../App';
 
 const Cart = () => {
 
-  const [name, setName] = useState("");
+  const [error, setError] = useState(true);
 
   const nameRef = useRef();
   const addRef = useRef();
@@ -17,20 +17,71 @@ const Cart = () => {
 
   const stateImport = useContext(ContextDispatch);
 
-  const orderConfirm = () => {
+  const validationChecker = () => {
+    let errorFlag = false;
+
     let nameVal = nameRef.current.value;
-    stateImport.stateChanger({type: "cAddress", value: addRef.current.value});
-    stateImport.stateChanger({type: "cName", value: nameRef.current.value});
-    stateImport.stateChanger({type: "cEmail", value: emailRef.current.value});
-    stateImport.stateChanger({type: "cNumber", value: numRef.current.value});
-    stateImport.stateChanger({type: "ccNumber", value: ccNumRef.current.value});
-    navigate("/orders");
+    let addVal = addRef.current.value;
+    let emailVal = emailRef.current.value;
+    let numVal = numRef.current.value;
+    let ccVal = ccNumRef.current.value;
+    
+    if(!/^[a-zA-Z\s]+$/.test(nameVal)){
+      errorFlag=true;
+      return errorFlag;
+    }
+
+    if(addVal.length<1){
+      errorFlag=true;
+      return errorFlag;
+    }
+
+    if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailVal)){
+      errorFlag = true;
+      return errorFlag;
+    }
+
+    if(!/^\d{10}$/.test(numVal)){
+      errorFlag=true;
+      return errorFlag;
+    }
+
+    if(!/^\d{19}$/.test(ccVal)){
+      errorFlag=true;
+      return errorFlag;
+    }
+
+    return errorFlag;
   }
 
-  
+  const orderConfirm = () => {
+    setError(false);
+    let formError = validationChecker();
+    setError(formError);
+    // if(!error){
+    //   stateImport.stateChanger({type: "cAddress", value: addRef.current.value});
+    //   stateImport.stateChanger({type: "cName", value: nameRef.current.value});
+    //   stateImport.stateChanger({type: "cEmail", value: emailRef.current.value});
+    //   stateImport.stateChanger({type: "cNumber", value: numRef.current.value});
+    //   stateImport.stateChanger({type: "ccNumber", value: ccNumRef.current.value});
+    //   navigate("/orders");
+    // }    
+  }
+
+  useEffect(() => {
+    if(!error){
+      stateImport.stateChanger({type: "cAddress", value: addRef.current.value});
+      stateImport.stateChanger({type: "cName", value: nameRef.current.value});
+      stateImport.stateChanger({type: "cEmail", value: emailRef.current.value});
+      stateImport.stateChanger({type: "cNumber", value: numRef.current.value});
+      stateImport.stateChanger({type: "ccNumber", value: ccNumRef.current.value});
+      navigate("/orders");
+    }
+  }, [error])
 
   return (
     <div>
+      {error? <p className='fontItem mb-20'>*Please enter all fields mandatorily and correctly*</p> : ""}
       <div className='d-flex flex-wrap '>
         <div className='w-50pc mb-20'>
           <label for="name">Name</label>
@@ -38,7 +89,7 @@ const Cart = () => {
         </div>
         <div className='w-50pc mb-20'>
           <label for="address">Address</label>
-          <input id="address" type='text' ref={addRef} />
+          <input id="address" type='text' ref={addRef} required/>
         </div>
         <div className='w-50pc mb-20'>
           <label for="email">Email</label>
@@ -46,22 +97,16 @@ const Cart = () => {
         </div>
         <div className='w-50pc mb-20'>
           <label for="number">Phone Number</label>
-          <input id="number" type='number' ref={numRef} />
+          <input id="number" type='text' ref={numRef} />
         </div>
         <div className='w-50pc mb-20'>
           <label for="ccNumber">Credit Card Number</label>
-          <input id="ccNumber" type='number' ref={ccNumRef} />
+          <input id="ccNumber" type='text' ref={ccNumRef} />
         </div>
       </div>
       <div className='orderDetailCont mb-20'>
         <p>Item details:</p>
-        {/* <div>
-          <p>Product Name: <span></span></p>
-          <p>Short Description: <span></span></p>
-          <p>Price: <span></span></p>
-          <p>Discount: <span></span></p>
-          <p>Actual Price: <span></span></p>
-        </div> */}
+       
         <ItemDesc itemData={stateImport.state}/>
       </div>
         <div className='d-flex jc-flexEnd al-center'>
