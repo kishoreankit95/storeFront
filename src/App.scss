@@ -12,3 +12,20 @@
 .py-50{
   padding: 50px;
 }
+
+.btn-1{
+    background-color: #04AA6D;
+    border-radius: 5px;
+    font-size: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 6px 18px;
+    border: none;
+    color: #FFFFFF;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover{
+      background-color: #088255;
+    }
+}

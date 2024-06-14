@@ -3,9 +3,12 @@ import './App.scss';
 import StoreList from './pages/StoreList';
 import Cart from './pages/Cart';
 import Container from './components/Container';
-import { useReducer } from 'react';
+import React, { useReducer } from 'react';
 import {Routes, Route} from "react-router-dom";
 import Orders from './pages/Orders';
+import {reducer} from "./reducers/Reducer";
+
+export const ContextDispatch = React.createContext();
 
 function App() {
 
@@ -17,14 +20,6 @@ function App() {
     cNumber: null,
     ccNumber: null
   };
-  
-
-  const reducer = (state, action) => {
-    switch(action.type){
-      case "productSelect":
-        return {...state, selItem: action.value}
-    }
-  }
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -35,11 +30,13 @@ function App() {
   return (
     <div className="App py-50">
       <Container >
-      <Routes>
-        <Route path="/" element={<StoreList stateChanger={dispatch} />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/orders" element={<Orders />} />
-      </Routes>
+      <ContextDispatch.Provider value={state}>
+        <Routes>
+          <Route path="/" element={<StoreList stateChanger={dispatch} />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/orders" element={<Orders />} />
+        </Routes>
+      </ContextDispatch.Provider>
         {/* <StoreList /> */}
       </Container>      
     </div>

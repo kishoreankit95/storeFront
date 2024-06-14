@@ -16,7 +16,7 @@ const StoreList = ({stateChanger}) => {
 
     const agGroupCellRenderer = (params) => {
         return (
-            <button onClick={() => buyClickHandler(params.data)}>Buy</button>
+            <button className='btn-1' onClick={() => buyClickHandler(params.data)}>Buy</button>
         )
     }
 
