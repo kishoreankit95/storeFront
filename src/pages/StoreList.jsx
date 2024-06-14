@@ -47,13 +47,13 @@ const StoreList = ({}) => {
     }
 
     const colData= [
-        { field: "picture", headerName: "Picture", cellRenderer: picColRenderer },
-        { field: "name", headerName: "Name"  },
-        { field: "shortDesc", headerName: "Short Description"  },
+        { field: "picture", headerName: "Picture", cellRenderer: picColRenderer, sortable: false },
+        { field: "name", headerName: "Name", filter: "agTextColumnFilter"  },
+        { field: "shortDesc", headerName: "Short Description", filter: "agTextColumnFilter",  sortable: false  },
         { field: "price", headerName: "Suggested Price"  },
-        { field: "discount", headerName: "% Discount"  },
+        { field: "discount", headerName: "% Discount",  sortable: false  },
         { field: "actualPrice", headerName: "Actual Price", cellRenderer: actualPriceRenderer   },
-        { field: "buy", headerName: "Buy", cellRenderer: buyBtnRenderer},
+        { field: "buy", headerName: "Buy", cellRenderer: buyBtnRenderer,  sortable: false},
     ];
 
     const rowData = [
