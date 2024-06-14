@@ -4,7 +4,7 @@ import * as gridData from "../data/data.json";
 import {useNavigate} from "react-router-dom";
 import { ContextDispatch } from '../App';
 
-const StoreList = ({stateChanger}) => {
+const StoreList = ({}) => {
 
     const navigate = useNavigate();
 
@@ -13,7 +13,9 @@ const StoreList = ({stateChanger}) => {
     const stateImport = useContext(ContextDispatch);
 
     const buyClickHandler = (item) => {
-        stateChanger({type: "productSelect", value: item.data})
+        stateImport.stateChanger({type: "productSelect", value: item.data})
+        stateImport.stateChanger({type: "actPrice", value: item.data.actualPrice
+        });
         navigate("/cart");
     }
 

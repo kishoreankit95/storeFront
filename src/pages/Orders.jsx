@@ -17,9 +17,13 @@ const Orders = () => {
     <div>
       <p>Order no: <span>{orderNoGenerator()}</span></p>
       <div>
+        <p>Thank you <b>{stateImport.state.cName}</b> for placing the order on us</p>
+        <p>The order would be dispatched at: <b>{stateImport.state.cAddress}</b> in the next 3 working days</p>
+      </div>
+      <div>
         <p>Item details:</p>
-        <ItemDesc itemData={stateImport} />
-        <p>Amount deducted on your card: <span>{stateImport?.selItem?.actualPrice}</span></p>
+        <ItemDesc itemData={stateImport.state} />
+        <p>Amount deducted on your card: <span className='fontItem'>{stateImport?.state?.actPrice}</span></p>
       </div>
     </div>
   )
