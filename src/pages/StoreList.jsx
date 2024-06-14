@@ -1,18 +1,27 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import AggridComp from '../components/AggridComp';
-import * as gridData from "../data/data.json";
+import * as gridDatas from "../data/data.json";
 import {useNavigate} from "react-router-dom";
 import { ContextDispatch } from '../App';
 
 const StoreList = ({}) => {
 
     const navigate = useNavigate();
+    const [gridData, setGridData] = useState([]);
 
-    const storeListData = gridData.default.storeItems;
+    const storeListData = gridDatas.default.storeItems;
+
+    useEffect(() => {
+        let newArr = storeListData.map((elem) => {
+            let actualPrice = Math.floor(elem.price - (elem.price*elem.discount/100));
+            return {...elem, actualPrice};
+        })
+        setGridData(newArr);
+    }, []);
 
     const stateImport = useContext(ContextDispatch);
 
-    const buyClickHandler = (item) => {
+    const buyClickHandler = (item, a) => {
         stateImport.stateChanger({type: "productSelect", value: item.data})
         stateImport.stateChanger({type: "actPrice", value: item.data.actualPrice
         });
@@ -44,7 +53,7 @@ const StoreList = ({}) => {
         { field: "price", headerName: "Suggested Price"  },
         { field: "discount", headerName: "% Discount"  },
         { field: "actualPrice", headerName: "Actual Price", cellRenderer: actualPriceRenderer   },
-        { field: "buy", headerName: "Buy", cellRenderer: buyBtnRenderer  },
+        { field: "buy", headerName: "Buy", cellRenderer: buyBtnRenderer},
     ];
 
     const rowData = [
@@ -73,7 +82,7 @@ const StoreList = ({}) => {
         <div>
             <AggridComp
                 columnData = {colData}
-                rowData={storeListData}
+                rowData={gridData}
                 gridOptns={gridOptions}
             />
         </div>
